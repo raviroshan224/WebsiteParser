@@ -29,12 +29,11 @@ public class ImageGrabber extends JScrollPane {
             if (l.length() > 0) {
                 if (l.length() < 4)
                     l = doc.baseUri() + l.substring(1);
-                else if (!l.substring(0, 4).equals("http")) ;
-                JLabel label = new JLabel(l);
+                else if (!l.substring(0, 4).equals("http"))
+                    l =doc.baseUri() + l.substring(1);
+                SwingLink label = new SwingLink(l, l);
                 panel.add(label);
             }
         }
-
-
     }
 }
